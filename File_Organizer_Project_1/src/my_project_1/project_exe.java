@@ -3,13 +3,15 @@ package my_project_1;
 public class project_exe {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// Declaring objects
 		welcome_screen welcome_screen_obj=new welcome_screen();
 		ui ui_obj=new ui();
-		//show_file show_file_obj=new show_file();
+	
 		welcome_screen_obj.printLetters(welcome_screen_obj.w);
 		ui_obj.print_ui();
-		//show_file_obj.print_file();
+		main_menu main_menu_obj=new main_menu();
+		main_menu_obj.print_main_menu();
+		
 	}
 
 }
