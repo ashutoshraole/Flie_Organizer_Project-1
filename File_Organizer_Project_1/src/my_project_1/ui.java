@@ -11,7 +11,9 @@ public class ui {
 			System.out.println("Enter [1 or 2 ] to Seclect Option");
 			ui_ip=sc.nextInt();
 			if(ui_ip==1) {
-				System.out.println("1");
+				//System.out.println("1");
+				show_file show_file_obj=new show_file();
+				show_file_obj.print_file();
 				break;
 			}
 			

@@ -4,10 +4,12 @@ public class project_exe {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		welcome_screen ws=new welcome_screen();
-		ui u=new ui();
-		ws.printLetters(ws.w);
-		u.print_ui();
+		welcome_screen welcome_screen_obj=new welcome_screen();
+		ui ui_obj=new ui();
+		//show_file show_file_obj=new show_file();
+		welcome_screen_obj.printLetters(welcome_screen_obj.w);
+		ui_obj.print_ui();
+		//show_file_obj.print_file();
 	}
 
 }
