@@ -30,6 +30,7 @@ public class main_menu {
 		System.out.println("Enter your option:[a,b,c,d,e,f,g]");
 		
 		while(!exitFlag) {
+			System.out.println(exitFlag);
 			choice=sc.next();
 		
 			switch(choice.toLowerCase()) {
