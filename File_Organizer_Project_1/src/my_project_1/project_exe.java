@@ -9,6 +9,7 @@ public class project_exe {
 	
 		welcome_screen_obj.printLetters(welcome_screen_obj.w);
 		ui_obj.print_ui();
+<<<<<<< HEAD
 
 		/*
 		 * set_working_directory swd=new set_working_directory();
@@ -16,6 +17,10 @@ public class project_exe {
 		 * 
 		 * System.out.println(swd.working_directory);
 		 */
+=======
+		//main_menu main_menu_obj=new main_menu();
+		//main_menu_obj.print_main_menu();
+>>>>>>> 9083d4d ( sprint-3 par 3 done)
 		
 //		String array[]= {"abc","def","aaa"};
 //		binary_search bs=new binary_search();
