@@ -2,7 +2,7 @@ package my_project_1;
 
 public class project_exe {
 
-	public static void main(String[] args) {
+	public static void main(String[] args){
 		// Declaring objects		
 		
 		

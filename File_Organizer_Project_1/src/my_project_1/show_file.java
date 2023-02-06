@@ -5,7 +5,7 @@ import java.util.*;
 
 public class show_file {
 
-	String[] checkFiles() {		
+	String[] checkFiles(){		
 		
 		sorting sortFiles = new sorting();
 		
@@ -37,6 +37,7 @@ public class show_file {
 			i=0;
 			for(File file:files) {
 				if(file.isFile()) {
+					if(file.getName().trim()!=null && !file.getName().trim().isEmpty())
 					fileNames[i]=file.getName().trim();
 					i++;
 				}
@@ -47,7 +48,7 @@ public class show_file {
 	}
 	
 	
-	void printFiles() {
+	void printFiles(){
 			String fileNames[]=checkFiles();
 			int back=0;
 			Scanner sc= new Scanner(System.in);

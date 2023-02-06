@@ -2,7 +2,7 @@ package my_project_1;
 import java.util.*;
 public class ui {
 	
-	void print_ui() {
+	void print_ui(){
 		Scanner sc=new Scanner(System.in);
 		int ui_ip=0;
 		boolean exitFlag=false;
@@ -20,14 +20,14 @@ public class ui {
 			}
 			
 			else if(ui_ip==2) {
-				System.out.println("2");
 				main_menu main_menu_obj=new main_menu();
 				main_menu_obj.print_main_menu();
 				break;
 			}
 			
-			else if(ui_ip==2) {
+			else if(ui_ip==3) {
 				exitFlag=true;
+				System.out.println("Thank You for using the application");
 				break;
 			}
 			else {

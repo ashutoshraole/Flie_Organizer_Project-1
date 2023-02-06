@@ -3,7 +3,10 @@ import java.util.*;
 import java.io.File;
 import java.io.IOException;
 public class main_menu {
-	void print_main_menu() {
+	void print_main_menu(){
+		 ui ui_obj=new ui();
+		 main_menu main_menu_obj=new main_menu();
+		
 		String choice,fileName;
 		boolean exitFlag=false;
 		Scanner sc =new Scanner(System.in);
@@ -17,16 +20,16 @@ public class main_menu {
 			
 		String folderpath=swd.working_directory;
 				
-		System.out.println("a.Add File");
-		System.out.println("b.Delete File");
-		System.out.println("c.Search File");
-		System.out.println("d.Main menu");
-		System.out.println("e.Change working directory");
-		System.out.println("f.Exit application");
-		System.out.println("Enter your option:[a,b,c,d,e,f]");
+		System.out.println("a. Add File");
+		System.out.println("b. Delete File");
+		System.out.println("c. Search File");
+		System.out.println("d. Home Screen");
+		System.out.println("e. Show working directory");
+		System.out.println("f. Change working directory");
+		System.out.println("g. Exit application");
+		System.out.println("Enter your option:[a,b,c,d,e,f,g]");
 		
 		while(!exitFlag) {
-			System.out.println(exitFlag);
 			choice=sc.next();
 		
 			switch(choice.toLowerCase()) {
@@ -82,20 +85,37 @@ public class main_menu {
 				break;
 			case "d":
 				//System.out.println("d.main menu");
-				ui ui_obj=new ui();
 				ui_obj.print_ui();
 				break;
 			case "e":
+				swd.get_working_directory();
+				System.out.println("Working Directory: " + swd.working_directory);
+				break;
+			case "f":
 					swd.new_working_directory();
 					break;
-			case "f":
+			case "g":
 				System.out.print("Thank you for using the Application");
 				exitFlag=true;
 				break;
+				
 			default:
-			System.out.println("Enter valid input in lower case");
+			System.out.println("Enter valid input");
 		
 			}
+			System.out.println("Enter [8] to show options again");
+			System.out.println("Enter [9] back to home screen");
+			int back =sc.nextInt();
+			if(back==9) {
+				ui_obj.print_ui();
+			}
+			else if(back==8) {
+				main_menu_obj.print_main_menu();
+			}
+			else {
+			System.out.println("Enter Valid Option");
+			}
+			
 		}
 	}
 
