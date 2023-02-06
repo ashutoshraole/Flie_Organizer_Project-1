@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 E:\Full Stack Development\Simplilearn\COURSE-2\Flie_Organizer_Project-1\File_Organizer_Project_1\resources\
 =======
 E:\Full Stack Development\Simplilearn\COURSE-2\Flie_Organizer_Project-1\File_Organizer_Project_1\resources\Files
@@ -7,3 +8,6 @@ E:\Full Stack Development\Simplilearn\COURSE-2\Flie_Organizer_Project-1\File_Org
 =======
 E:\Full Stack Development\Simplilearn\COURSE-2\Flie_Organizer_Project-1\File_Organizer_Project_1\resources\Files\
 >>>>>>> cce180f (Searching and Sorting is Done)
+=======
+E:\Full Stack Development\Simplilearn\COURSE-2\Flie_Organizer_Project-1\File_Organizer_Project_1\resources\
+>>>>>>> 9a1e949 (Minor Bugs Fixed)
