@@ -1,0 +1,10 @@
+package my_project_1;
+
+public class set_working_directory {
+	String working_directory;
+        void select_working_directory() {
+        	
+        	working_directory=System.getProperty("user.dir");
+        	working_directory+="Files\\";
+        }
+}

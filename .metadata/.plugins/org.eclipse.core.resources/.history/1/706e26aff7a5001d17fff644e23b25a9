@@ -1,0 +1,82 @@
+package my_project_1;
+import java.util.*;
+import java.io.File;
+import java.io.IOException;
+public class main_menu {
+	void print_main_menu() {
+		String choice;
+		Scanner sc =new Scanner(System.in);
+		//Get path for repository
+		set_working_directory swd=new set_working_directory();
+		swd.get_working_directory();
+		if (swd.working_directory.equals("not_set")) {
+			swd.new_working_directory();
+		}
+			
+		String folderpath=swd.working_directory;
+				
+		System.out.println("a.Add File");
+		System.out.println("b.Delete File");
+		System.out.println("c.Search File");
+		System.out.println("d.Main menu");
+		System.out.println("e.Change working directory");
+		System.out.println("f.Exit application");
+		System.out.println("Enter your option:[a,b,c,d,e,f]");
+		
+		while(true) {
+			choice=sc.next();
+		
+			switch(choice.toLowerCase()) {
+		
+			case "a":
+			//System.out.println("a.Add File");
+				try {
+				System.out.println("Enter File Name:");
+				String file_name="";
+				file_name=sc.next();
+				 File new_file=new File(folderpath+" "+file_name);
+				 if(new_file.createNewFile()) {
+					 System.out.println("File created: " + new_file.getName());
+			      } else {
+			        System.out.println("File already exists.");
+			      }
+				}catch(IOException e) {
+					System.out.println("An error occurred.");
+				      e.printStackTrace();
+				}
+				 
+			break;
+			case "b":
+				//System.out.println("b.delete File");
+				System.out.println("Enter File Name:");
+				String file_name="";
+				file_name=sc.next();
+				 File delete_file=new File(folderpath+" "+file_name);
+				 if(delete_file.delete()) {
+					 System.out.println("Deleted the File : " + delete_file.getName());
+			      } else {
+			        System.out.println("Failed to Delete the File");
+			      }
+				break;
+			case "c":
+				System.out.println("a.Add File");
+				break;
+			case "d":
+				//System.out.println("d.main menu");
+				ui ui_obj=new ui();
+				ui_obj.print_ui();
+				break;
+			case "e":
+					swd.new_working_directory();
+					break;
+			case "f":
+				System.out.println("Thank you for using the Application");
+				break;
+			default:
+			System.out.println("Enter valid input in lower case");
+		
+			}
+		}
+	}
+
+}
