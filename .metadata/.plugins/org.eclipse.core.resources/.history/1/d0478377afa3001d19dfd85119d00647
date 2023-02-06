@@ -1,0 +1,12 @@
+package my_project_1;
+
+public class welcome_screen {
+
+		void get_w() {
+			int w[][]= {{1,1,1,1,1},{0,0,0,0,0}};
+			System.out.println(w[0][0]);
+
+		}
+		
+		
+}
