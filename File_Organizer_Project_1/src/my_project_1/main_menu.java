@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 public class main_menu {
 	void print_main_menu() {
-		String choice;
+		String choice,fileName;
 		boolean exitFlag=false;
 		Scanner sc =new Scanner(System.in);
 		//Get path for repository
@@ -12,6 +12,7 @@ public class main_menu {
 		swd.get_working_directory();
 		if (swd.working_directory.equals("not_set")) {
 			swd.new_working_directory();
+			swd.get_working_directory();
 		}
 			
 		String folderpath=swd.working_directory;
@@ -25,6 +26,7 @@ public class main_menu {
 		System.out.println("Enter your option:[a,b,c,d,e,f]");
 		
 		while(!exitFlag) {
+			System.out.println(exitFlag);
 			choice=sc.next();
 		
 			switch(choice.toLowerCase()) {
@@ -32,7 +34,7 @@ public class main_menu {
 			case "a":
 			//System.out.println("a.Add File");
 				try {
-				System.out.println("Enter File Name:");
+				System.out.print("Enter File Name: ");
 				String file_name="";
 				file_name=sc.next();
 				 File new_file=new File(folderpath+" "+file_name);
@@ -49,7 +51,7 @@ public class main_menu {
 			break;
 			case "b":
 				//System.out.println("b.delete File");
-				System.out.println("Enter File Name:");
+				System.out.print("Enter File Name: ");
 				String file_name="";
 				file_name=sc.next();
 				 File delete_file=new File(folderpath+" "+file_name);
@@ -60,7 +62,23 @@ public class main_menu {
 			      }
 				break;
 			case "c":
-				System.out.println("a.Add File");
+				binary_search searchFile=new binary_search();
+				show_file getList=new show_file();
+				
+				System.out.print("Kindly Enter the file name to search: ");
+				fileName=sc.next();
+				
+				String fileList[]=getList.checkFiles();
+				
+				searchFile.binarySearch(fileList, fileName);
+				
+				if(searchFile.statusFile){
+					System.out.println(fileName + " is available in working directory");
+				}
+				else {
+					System.out.println(fileName + " is not available in working directory");
+				}
+					
 				break;
 			case "d":
 				//System.out.println("d.main menu");
@@ -71,7 +89,7 @@ public class main_menu {
 					swd.new_working_directory();
 					break;
 			case "f":
-				System.out.println("Thank you for using the Application");
+				System.out.print("Thank you for using the Application");
 				exitFlag=true;
 				break;
 			default:

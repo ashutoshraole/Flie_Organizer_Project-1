@@ -15,7 +15,7 @@ public class ui {
 			if(ui_ip==1) {
 				//System.out.println("1");
 				show_file show_file_obj=new show_file();
-				show_file_obj.print_file();
+				show_file_obj.printFiles();
 				break;
 			}
 			

@@ -30,13 +30,17 @@ public class set_working_directory {
         
         void new_working_directory() {
         	Scanner getInput=new Scanner(System.in);
-        	System.out.print("Enter path for working directory: ");
+        	System.out.println("Enter path for working directory: \nkindly use " + "\\"+"\\" + " for path specification "
+        			+ "e.g. E:"+"\\"+"\\"+"myFolder"+"\\"+"\\"+"workingDirectory"+"\\"+"\\");
         	
         	working_directory=System.getProperty("user.dir");
         	working_directory+="\\resources\\";
         	
         	String new_working_directory=getInput.nextLine();
-        	
+        	if(!new_working_directory.substring(new_working_directory.length()-1).equals("\\")) {
+        		new_working_directory+="\\";
+        	}
+        		
         	try {
         	      FileWriter myWriter = new FileWriter(working_directory+"working_directory_path.txt");
         	      myWriter.write(new_working_directory);

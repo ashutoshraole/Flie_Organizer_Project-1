@@ -4,9 +4,12 @@ import java.util.Collections;
 import java.util.*;
 
 public class show_file {
-	void print_file() {
-		Scanner sc= new Scanner(System.in);
-		int back =0;
+
+	String[] checkFiles() {		
+		
+		sorting sortFiles = new sorting();
+		
+		int i=0;
 		
 		//Get path for repository
 		set_working_directory swd=new set_working_directory();
@@ -21,15 +24,39 @@ public class show_file {
 		String folderpath=swd.working_directory;
 	
 		File folder=new File(folderpath);
-		File [] files =folder.listFiles(); 
-		//iterate the file array 
-		System.out.println("Files are: ");
-		for(File file:files) {
-			if(file.isFile()) {
-			   System.out.println("* File ->"+" "+file.getName());
-			}
-
+		File [] files =folder.listFiles();
+		
+		int countFiles=files.length;
+		String fileNames[]=new String[countFiles];
+		
+		if (countFiles==0) {
+			System.out.println("No files available in working directory");
+			
 		}
+		else {	
+			i=0;
+			for(File file:files) {
+				if(file.isFile()) {
+					fileNames[i]=file.getName().trim();
+					i++;
+				}
+			}
+			sortFiles.sorting_method(fileNames);
+		}
+		return fileNames;
+	}
+	
+	
+	void printFiles() {
+			String fileNames[]=checkFiles();
+			int back=0;
+			Scanner sc= new Scanner(System.in);
+			//iterate the file array 
+			System.out.println("Files are: ");
+			for(String name:fileNames) {
+				   System.out.println("* File ->"+" "+name);
+			}
+		
 		while (true) {
 		System.out.println("Enter [9] to back to Previous Menu");
 		back =sc.nextInt();
