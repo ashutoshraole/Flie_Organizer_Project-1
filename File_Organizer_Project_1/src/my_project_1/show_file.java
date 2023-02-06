@@ -7,7 +7,19 @@ public class show_file {
 	void print_file() {
 		Scanner sc= new Scanner(System.in);
 		int back =0;
-		String folderpath="E:\\Full Stack Development\\Simplilearn\\COURSE-2\\Flie_Organizer_Project-1\\Files";
+		
+		//Get path for repository
+		set_working_directory swd=new set_working_directory();
+		swd.get_working_directory();
+		
+		if (swd.working_directory.equals("not_set")) {
+			swd.new_working_directory();
+			swd.get_working_directory();
+		}
+		
+		//Assigning local variable
+		String folderpath=swd.working_directory;
+	
 		File folder=new File(folderpath);
 		File [] files =folder.listFiles(); 
 		//iterate the file array 

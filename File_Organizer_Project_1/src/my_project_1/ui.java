@@ -5,10 +5,12 @@ public class ui {
 	void print_ui() {
 		Scanner sc=new Scanner(System.in);
 		int ui_ip=0;
-		while (true) {
+		boolean exitFlag=false;
+		while (!exitFlag) {
 			System.out.println("1. Show Files");
 			System.out.println("2. Main Menu");
-			System.out.print("Enter [1 or 2] to Select Option: ");
+			System.out.println("3. Exit");
+			System.out.print("Enter Option: ");
 			ui_ip=sc.nextInt();
 			if(ui_ip==1) {
 				//System.out.println("1");
@@ -23,7 +25,11 @@ public class ui {
 				main_menu_obj.print_main_menu();
 				break;
 			}
-		
+			
+			else if(ui_ip==2) {
+				exitFlag=true;
+				break;
+			}
 			else {
 				System.out.println("Please Enter Valid Option");
 			}

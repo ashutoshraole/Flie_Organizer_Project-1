@@ -5,15 +5,26 @@ import java.io.IOException;
 public class main_menu {
 	void print_main_menu() {
 		String choice;
+		boolean exitFlag=false;
 		Scanner sc =new Scanner(System.in);
+		//Get path for repository
+		set_working_directory swd=new set_working_directory();
+		swd.get_working_directory();
+		if (swd.working_directory.equals("not_set")) {
+			swd.new_working_directory();
+		}
+			
+		String folderpath=swd.working_directory;
+				
 		System.out.println("a.Add File");
 		System.out.println("b.Delete File");
 		System.out.println("c.Search File");
 		System.out.println("d.Main menu");
-		System.out.println("e.Exit application");
-		System.out.println("Enter your option:[a,b,c,d,e]");
+		System.out.println("e.Change working directory");
+		System.out.println("f.Exit application");
+		System.out.println("Enter your option:[a,b,c,d,e,f]");
 		
-		while(true) {
+		while(!exitFlag) {
 			choice=sc.next();
 		
 			switch(choice.toLowerCase()) {
@@ -21,7 +32,6 @@ public class main_menu {
 			case "a":
 			//System.out.println("a.Add File");
 				try {
-				String folderpath="E:\\Full Stack Development\\Simplilearn\\COURSE-2\\Flie_Organizer_Project-1\\Files\\";
 				System.out.println("Enter File Name:");
 				String file_name="";
 				file_name=sc.next();
@@ -39,7 +49,6 @@ public class main_menu {
 			break;
 			case "b":
 				//System.out.println("b.delete File");
-				String folderpath="E:\\Full Stack Development\\Simplilearn\\COURSE-2\\Flie_Organizer_Project-1\\Files\\";
 				System.out.println("Enter File Name:");
 				String file_name="";
 				file_name=sc.next();
@@ -59,7 +68,11 @@ public class main_menu {
 				ui_obj.print_ui();
 				break;
 			case "e":
+					swd.new_working_directory();
+					break;
+			case "f":
 				System.out.println("Thank you for using the Application");
+				exitFlag=true;
 				break;
 			default:
 			System.out.println("Enter valid input in lower case");
