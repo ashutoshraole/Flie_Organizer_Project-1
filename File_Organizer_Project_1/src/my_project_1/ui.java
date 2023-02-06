@@ -8,7 +8,7 @@ public class ui {
 		while (true) {
 			System.out.println("1. Show Files");
 			System.out.println("2. Main Menu");
-			System.out.println("Enter [1 or 2 ] to Seclect Option");
+			System.out.print("Enter [1 or 2] to Select Option: ");
 			ui_ip=sc.nextInt();
 			if(ui_ip==1) {
 				//System.out.println("1");
@@ -19,6 +19,8 @@ public class ui {
 			
 			else if(ui_ip==2) {
 				System.out.println("2");
+				main_menu main_menu_obj=new main_menu();
+				main_menu_obj.print_main_menu();
 				break;
 			}
 		

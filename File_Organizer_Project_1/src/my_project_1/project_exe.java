@@ -9,8 +9,8 @@ public class project_exe {
 	
 		welcome_screen_obj.printLetters(welcome_screen_obj.w);
 		ui_obj.print_ui();
-		main_menu main_menu_obj=new main_menu();
-		main_menu_obj.print_main_menu();
+		//main_menu main_menu_obj=new main_menu();
+		//main_menu_obj.print_main_menu();
 		
 	}
 
