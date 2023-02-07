@@ -108,6 +108,7 @@ public class main_menu {
 				break;
 			case "f":
 					swd.new_working_directory();
+					exitFlag=true;
 					break;
 			case "g":
 				System.out.print("\nThank you for using the Application");
