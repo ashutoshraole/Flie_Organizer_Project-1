@@ -42,8 +42,13 @@
 	12.1.5. take input to enter into above option
 13. define another method show_flie(){}
 
-	13.1.0 apllication will ask for set working directory 
-	13.1.1 take input to set working directory
+	13.1.0 apllication will ask for set working directory for 1st run only
+	13.1.1 code will srearch for execution path and store it to working_directory (String data type)
+	13.1.2 working_directory+="\\resources\\"
+	13.1.3 Read File "working_directory_path.txt" from path
+	13.1.4 if File contains not_set then ask user to update 
+	13.1.5 take input to set working directory 
+	13.1.6 update data in working_directory_path.txt
 	13.1.2 print Working directory path is updated
 	13.1.3 application will show there is any file present or not
 			if its present then it will display file names in sorted form as follows  

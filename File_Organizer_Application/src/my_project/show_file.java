@@ -15,7 +15,7 @@ public class show_file {
 		swd.get_working_directory();
 		
 		if (swd.working_directory.equals("not_set")) {
-			System.out.println("\n Working Directory is not Defined yet");
+			System.out.println("\nWorking Directory is not Defined yet");
 			swd.new_working_directory();
 			swd.get_working_directory();
 		}

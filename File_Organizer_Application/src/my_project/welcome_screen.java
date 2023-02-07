@@ -21,7 +21,9 @@ public class welcome_screen {
 				}
 					System.out.println();
 			}
-		
+					System.out.println("Application Name: File Organizer");
+					
+					System.out.println("Author Name: Ashutosh Vasant Raole");
 		}
 }
 
